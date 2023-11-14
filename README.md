@@ -1,6 +1,8 @@
 # AbortController Multiplexer
 > Combine multiple AbortControllers or AbortSignals into a single instance
 
+[![abort-controller-multiplexer](https://img.shields.io/npm/v/abort-controller-multiplexer?color=blue&label=abort-controller-multiplexer&logo=npm&style=flat-square)](https://www.npmjs.com/package/abort-controller-multiplexer) ![Tests status](https://github.com/perry-mitchell/abort-controller-multiplexer/actions/workflows/test.yml/badge.svg) ![GitHub](https://img.shields.io/github/license/perry-mitchell/abort-controller-multiplexer)
+
 `AbortController`s are very useful mechanisms in JavaScript that allow one to _insert_ abort signals into application components with ease. You can pass an `AbortController`'s `signal` (`AbortSignal`) into methods you call, abort it later, and use it to:
 
  * Cancel asynchronous operations
