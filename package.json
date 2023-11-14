@@ -1,0 +1,35 @@
+{
+  "name": "abort-controller-multiplexer",
+  "version": "0.0.0",
+  "description": "Combine multiple AbortControllers or AbortSignals into a single instance",
+  "exports": "./dist/index.js",
+  "types": "./dist/index.t.ts",
+  "type": "module",
+  "scripts": {
+    "build": "npm run clean && tsc",
+    "clean": "rimraf dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/perry-mitchell/abort-controller-multiplexer.git"
+  },
+  "keywords": [
+    "abortcontroller",
+    "abortsignal",
+    "abort",
+    "multiplexer",
+    "combine"
+  ],
+  "author": "Perry Mitchell <perry@perrymitchell.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/perry-mitchell/abort-controller-multiplexer/issues"
+  },
+  "homepage": "https://github.com/perry-mitchell/abort-controller-multiplexer#readme",
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.2.2"
+  }
+}
