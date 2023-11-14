@@ -7,6 +7,7 @@ export function combineControllers(...controllers: Array<AbortController>): Abor
         get signal(): AbortSignal {
             return signal;
         },
+        // Methods:
         abort: (reason?: any): void => {
             for (const controller of controllers) {
                 controller.abort(reason);
