@@ -34,7 +34,7 @@ const controller = combineControllers(ac1, ac2);
 controller.abort();
 ```
 
-_Note that `combineControllers` calls `combineSignals` under the hood.
+_Note that `combineControllers` calls `combineSignals` under the hood._
 
 Combine several signals:
 
