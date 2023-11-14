@@ -31,7 +31,11 @@ export function combineSignals(...signals: Array<AbortSignal>): AbortSignal {
         dispatchEvent: (event: Event): boolean => {
             return signals.some(signal => signal.dispatchEvent(event));
         },
-        removeEventListener: (type: string, callback: EventListenerOrEventListenerObject, options?: EventListenerOptions | boolean): void => {
+        removeEventListener: (
+            type: string,
+            callback: EventListenerOrEventListenerObject,
+            options?: EventListenerOptions | boolean
+        ): void => {
             for (const signal of signals) {
                 signal.removeEventListener(type, callback, options);
             }

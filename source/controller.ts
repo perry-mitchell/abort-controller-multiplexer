@@ -13,5 +13,5 @@ export function combineControllers(...controllers: Array<AbortController>): Abor
                 controller.abort(reason);
             }
         }
-    }
+    };
 }
