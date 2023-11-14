@@ -8,8 +8,11 @@
   "scripts": {
     "build": "npm run clean && tsc",
     "clean": "rimraf dist",
+    "format": "prettier --write \"{source,test}/**/*.{js,ts}\"",
+    "pre:commit": "lint-staged",
     "prepublishOnly": "npm run build",
-    "test": "npm run test:specs",
+    "test": "npm run test:specs && npm run test:format",
+    "test:format": "prettier --check \"{source,test}/**/*.{js,ts}\"",
     "test:specs": "npm run build && c8 --check-coverage --lines 80 --functions 75 --statements 80 --branches 100 mocha 'test/**/*.spec.js'"
   },
   "files": [
@@ -17,6 +20,14 @@
   ],
   "engines": {
     "node": ">=16"
+  },
+  "lint-staged": {
+    "{source,test}/**/*.{js,ts}": [
+      "prettier --write"
+    ]
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npm run pre:commit"
   },
   "repository": {
     "type": "git",
@@ -39,8 +50,11 @@
     "@types/node": "^20.9.0",
     "c8": "^8.0.1",
     "chai": "^4.3.10",
+    "lint-staged": "^15.1.0",
     "mocha": "^10.2.0",
+    "prettier": "^3.1.0",
     "rimraf": "^5.0.5",
+    "simple-git-hooks": "^2.9.0",
     "sinon": "^17.0.1",
     "typescript": "^5.2.2"
   }
